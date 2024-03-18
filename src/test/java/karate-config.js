@@ -11,7 +11,7 @@ function fn() {
     config.userEmail = 'maxi@maxi.maxi'
     config.username = 'maxi'
     config.userPassword = 'maximaxi'
-    
+
   } else if (env == 'qa') {
     config.userEmail = 'QA@maxi.maxi'
     config.userPassword = 'maximaxi'
@@ -20,7 +20,7 @@ function fn() {
   // obtain token from the feature
   var accessToken = karate.callSingle('classpath:helpers/CreateToken.feature', config).authToken
   // Configure a global header
-  karate.configure('headers', { Authorization: 'Token ' + accessToken })
+  karate.configure('headers', { Authorization: 'Token ' + accessToken }) 
 
   return config;
 }
